@@ -1,32 +1,32 @@
 [
   {
-    "name": "Nom de la Présidente",
-    "role": "Présidente",
+    "name": "Hamza Somai",
+    "role": "Président",
     "photo": "assets/images/team-placeholder.svg"
   },
   {
-    "name": "Nom du Vice-Président",
-    "role": "Vice-Président",
+    "name": "Fakher Guesmi",
+    "role": "VPFD",
     "photo": "assets/images/team-placeholder.svg"
   },
   {
-    "name": "Nom du Secrétaire Général",
+    "name": "Yasmine Boughaba",
     "role": "Secrétaire Général",
     "photo": "assets/images/team-placeholder.svg"
   },
   {
-    "name": "Nom du Trésorier",
+    "name": "Med Karim Karoui",
     "role": "Trésorier",
     "photo": "assets/images/team-placeholder.svg"
   },
   {
-    "name": "Nom du/de la Responsable Humanitaire",
-    "role": "Responsable Humanitaire",
+    "name": "Rayen Rebhi",
+    "role": "VPPRE",
     "photo": "assets/images/team-placeholder.svg"
   },
   {
-    "name": "Nom du/de la Responsable Communication",
-    "role": "Responsable Communication",
+    "name": "Abir Merzouki",
+    "role": "Past Présidente Immédiate",
     "photo": "assets/images/team-placeholder.svg"
   }
 ]
