@@ -1,0 +1,38 @@
+[
+  {
+    "id": "reboisement-khaznadar-2026",
+    "title": "Journée de reboisement à Khaznadar",
+    "date": "2026-03-15",
+    "category": "Humanitaire",
+    "excerpt": "Nos membres se sont mobilisés pour une matinée de plantation d'arbres et de sensibilisation à l'environnement, en partenariat avec des associations locales du Bardo.",
+    "image": "assets/images/news-placeholder.svg",
+    "link": "https://www.facebook.com/people/JCI-Khaznadar/61567749201924/"
+  },
+  {
+    "id": "formation-leadership-2026",
+    "title": "Formation en leadership et prise de parole en public",
+    "date": "2026-05-10",
+    "category": "Citoyenneté & gouvernance",
+    "excerpt": "Un atelier animé par des formateurs JCI pour renforcer les compétences de nos membres en communication, gestion de projet et prise de décision.",
+    "image": "assets/images/news-placeholder.svg",
+    "link": "https://www.facebook.com/people/JCI-Khaznadar/61567749201924/"
+  },
+  {
+    "id": "echange-culturel-2026",
+    "title": "Échange culturel avec une délégation JCI internationale",
+    "date": "2026-06-22",
+    "category": "Échanges culturels",
+    "excerpt": "Accueil d'une délégation de jeunes actifs venus découvrir Tunis et échanger sur les projets citoyens menés par notre chapitre.",
+    "image": "assets/images/news-placeholder.svg",
+    "link": "https://www.facebook.com/people/JCI-Khaznadar/61567749201924/"
+  },
+  {
+    "id": "tournoi-sportif-2026",
+    "title": "Tournoi sportif inter-chapitres JCI",
+    "date": "2026-07-05",
+    "category": "Loisirs & sports",
+    "excerpt": "Une journée conviviale de sport et de cohésion réunissant plusieurs filières JCI Tunisie autour de matchs amicaux et d'activités de team-building.",
+    "image": "assets/images/news-placeholder.svg",
+    "link": "https://www.facebook.com/people/JCI-Khaznadar/61567749201924/"
+  }
+]

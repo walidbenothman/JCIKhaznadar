@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Nom de la Présidente",
+    "role": "Présidente",
+    "photo": "assets/images/team-placeholder.svg"
+  },
+  {
+    "name": "Nom du Vice-Président",
+    "role": "Vice-Président",
+    "photo": "assets/images/team-placeholder.svg"
+  },
+  {
+    "name": "Nom du Secrétaire Général",
+    "role": "Secrétaire Général",
+    "photo": "assets/images/team-placeholder.svg"
+  },
+  {
+    "name": "Nom du Trésorier",
+    "role": "Trésorier",
+    "photo": "assets/images/team-placeholder.svg"
+  },
+  {
+    "name": "Nom du/de la Responsable Humanitaire",
+    "role": "Responsable Humanitaire",
+    "photo": "assets/images/team-placeholder.svg"
+  },
+  {
+    "name": "Nom du/de la Responsable Communication",
+    "role": "Responsable Communication",
+    "photo": "assets/images/team-placeholder.svg"
+  }
+]

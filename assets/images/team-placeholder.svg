@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-label="Photo de membre à remplacer">
+  <rect width="400" height="400" fill="#F2A900" opacity="0.12"/>
+  <circle cx="200" cy="200" r="198" fill="none" stroke="#F2A900" stroke-width="4"/>
+  <g fill="#0072BC" opacity="0.85">
+    <circle cx="200" cy="150" r="60"/>
+    <path d="M 80,360 C 80,270 130,240 200,240 C 270,240 320,270 320,360 Z"/>
+  </g>
+  <text x="200" y="392" text-anchor="middle" font-family="'Poppins', sans-serif" font-weight="600"
+        font-size="16" fill="#005EA8">Photo à remplacer</text>
+</svg>

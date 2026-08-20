@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-label="Photo d'actualité à remplacer">
+  <rect width="800" height="500" fill="#EAF3FB"/>
+  <rect x="0" y="0" width="800" height="500" fill="none" stroke="#0072BC" stroke-width="4"/>
+  <g transform="translate(340,180)" fill="#0072BC" opacity="0.8">
+    <rect x="0" y="30" width="120" height="90" rx="8"/>
+    <circle cx="60" cy="20" r="22"/>
+  </g>
+  <text x="400" y="330" text-anchor="middle" font-family="'Poppins', sans-serif" font-weight="700"
+        font-size="26" fill="#005EA8">Photo à remplacer</text>
+  <text x="400" y="365" text-anchor="middle" font-family="'Poppins', sans-serif" font-weight="400"
+        font-size="18" fill="#4A5568">news-placeholder.svg — remplacez par une photo Facebook (800x500px)</text>
+</svg>
