@@ -158,7 +158,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   position: relative;
   color: var(--color-white);
   overflow: hidden;
-  min-height: 88vh;
+  min-height: 120vh;
   display: flex;
   align-items: center;
 }
