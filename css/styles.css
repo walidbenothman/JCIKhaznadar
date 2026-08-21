@@ -17,7 +17,7 @@
 
   --font-main: 'Poppins', 'Segoe UI', Arial, sans-serif;
 
-  --container-width: 1180px;
+  --container-width: auto;
   --radius: 14px;
   --shadow-sm: 0 2px 8px rgba(0, 40, 80, 0.08);
   --shadow-md: 0 8px 28px rgba(0, 40, 80, 0.12);
