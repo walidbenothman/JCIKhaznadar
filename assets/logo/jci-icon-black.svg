@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 262" role="img" aria-labelledby="iconBlackTitle">
+  <title id="iconBlackTitle">Écusson JCI Khaznadar — noir</title>
+  <path fill-rule="evenodd" fill="#000000" d="
+    M75,0 C100,0 130,10 150,25 L150,112 C150,172 115,218 75,262 C35,218 0,172 0,112 L0,25 C20,10 50,0 75,0 Z
+    M75,30 C90,30 107,35 117,44 L117,96 C117,132 97,160 75,184 C53,160 33,132 33,96 L33,44 C43,35 60,30 75,30 Z
+  "/>
+</svg>

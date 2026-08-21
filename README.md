@@ -20,8 +20,14 @@ JCIKhaznadar/
 │   └── team.json           # Membres du bureau affichés dans la section "Notre équipe"
 ├── assets/
 │   ├── logo/
-│   │   ├── jci-khaznadar-logo.svg   # Logo complet (header, footer)
-│   │   └── favicon.svg              # Icône simplifiée (favicon)
+│   │   ├── logo-khaznadar-color.svg           # Logo complet couleur — fond blanc/clair (header)
+│   │   ├── logo-khaznadar-black.svg           # Logo complet monochrome noir — impression
+│   │   ├── logo-khaznadar-white-on-blue.svg   # Logo blanc sur pastille bleue #0097D6
+│   │   ├── logo-khaznadar-white-on-navy.svg   # Logo blanc/couleur sur pastille bleu marine #140F2D
+│   │   ├── logo-khaznadar-transparent-white.svg # Logo blanc, fond transparent — pour sections déjà sombres (footer)
+│   │   ├── jci-icon-navy.svg        # Écusson seul, bleu marine — icône/décoratif
+│   │   ├── jci-icon-black.svg       # Écusson seul, noir — icône/décoratif monochrome
+│   │   └── favicon.svg              # Badge navy + écusson blanc, optimisé petit format
 │   └── images/
 │       ├── hero-placeholder.svg     # Image de couverture (hero + section "Qui sommes-nous")
 │       ├── news-placeholder.svg     # Image par défaut des actualités
@@ -57,21 +63,30 @@ Tous les textes (accroche, présentation, missions, coordonnées...) sont direct
 Remplacez le texte entre les balises directement.
 
 ### Logo
-Le logo a été recréé en SVG à partir du logo officiel JCI Tunisie, en remplaçant "Tunisie" par
-"Khaznadar" (même bleu, même or, même disposition) :
-- [assets/logo/jci-khaznadar-logo.svg](assets/logo/jci-khaznadar-logo.svg) — logo complet (header/footer)
-- [assets/logo/favicon.svg](assets/logo/favicon.svg) — version simplifiée pour l'onglet du navigateur
+Le logo officiel JCI Khaznadar (écusson dégradé bleu/turquoise + mot-symbole "JCI" et
+"Khaznadar") a été redessiné fidèlement en **SVG vectoriel** à partir des fichiers fournis par
+l'association, pour une qualité d'affichage parfaite à toutes les tailles. Six déclinaisons sont
+disponibles dans `assets/logo/`, chacune prévue pour un fond précis :
 
-Étant vectoriel, ce logo peut être redimensionné sans perte et modifié dans n'importe quel éditeur
-SVG (Figma, Illustrator, Inkscape...) si vous voulez l'affiner ou coller plus précisément au logo
-officiel. Si vous obtenez un export officiel du logo JCI Khaznadar (PNG/SVG), vous pouvez
-simplement remplacer ces fichiers en gardant les mêmes noms — aucune autre modification n'est
-nécessaire.
+| Fichier | Usage | Utilisé actuellement dans |
+|---|---|---|
+| `logo-khaznadar-color.svg` | Logo couleur, fond blanc/clair | Header, meta Open Graph |
+| `logo-khaznadar-transparent-white.svg` | Logo blanc, fond transparent | Footer (fond bleu marine) |
+| `logo-khaznadar-white-on-blue.svg` | Logo blanc sur pastille bleue `#0097D6` | Usage libre (ex: réseaux sociaux) |
+| `logo-khaznadar-white-on-navy.svg` | Logo blanc/couleur sur pastille bleu marine `#140F2D` | Usage libre (ex: réseaux sociaux) |
+| `logo-khaznadar-black.svg` | Logo monochrome noir | Impression, fond très clair |
+| `jci-icon-navy.svg` / `jci-icon-black.svg` | Écusson seul, sans texte | Favicon, éléments décoratifs |
+| `favicon.svg` | Badge navy + écusson blanc, optimisé petit format | Onglet du navigateur |
 
-Pensez aussi à générer un `og-image.png` (1200×630px, format raster) à partir du logo pour un
-meilleur rendu lors des partages sur les réseaux sociaux, et à le référencer dans la balise
-`<meta property="og:image">` de [index.html](index.html) (actuellement pointée sur le SVG, qui
-n'est pas supporté par tous les réseaux sociaux).
+Étant vectoriels, ces logos peuvent être redimensionnés sans perte et affinés dans n'importe quel
+éditeur SVG (Figma, Illustrator, Inkscape...). Si vous obtenez les fichiers vectoriels sources
+officiels (AI/EPS/SVG du designer), vous pouvez remplacer n'importe lequel de ces fichiers en
+gardant le même nom — aucune autre modification du site n'est nécessaire.
+
+Pensez aussi à générer un `og-image.png` (1200×630px, format raster) à partir de
+`logo-khaznadar-color.svg` pour un meilleur rendu lors des partages sur les réseaux sociaux, et à
+le référencer dans la balise `<meta property="og:image">` de [index.html](index.html) (actuellement
+pointée sur le SVG, qui n'est pas supporté par tous les réseaux sociaux).
 
 ### Photos (placeholders à remplacer)
 Le dossier `assets/images/` contient des visuels de substitution, à remplacer par de vraies
@@ -162,15 +177,34 @@ Remplacez les valeurs placeholder dans la section Contact d'`index.html` :
 - Adresse : à préciser si vous avez une adresse exacte de local
 
 ### Couleurs et typographie
-Toute la palette est centralisée en variables CSS en haut de
-[css/styles.css](css/styles.css) (`:root { ... }`) : `--color-blue`, `--color-gold`, etc. La
-police utilisée est [Poppins](https://fonts.google.com/specimen/Poppins) via Google Fonts.
+
+Toute la palette est centralisée en variables CSS en haut de [css/styles.css](css/styles.css)
+(`:root { ... }`) et reprend la charte graphique officielle de JCI Khaznadar :
+
+| Variable | Hex | Usage |
+|---|---|---|
+| `--color-navy` | `#140F2D` | Couleur principale foncée : footer, sections sombres, titres |
+| `--color-blue` | `#0097D6` | Accent principal : icônes, dégradés, fonds décoratifs |
+| `--color-teal` | `#56BDBC` | Accent secondaire : hovers, petits détails, texte sur fond navy |
+| `--color-white` | `#FFFFFF` | Fond clair, texte sur fonds foncés |
+| `--color-black` | `#000000` | Logo monochrome, textes noirs stricts |
+
+Deux variantes **assombries pour l'accessibilité** complètent cette palette : le bleu et le
+turquoise "bruts" ci-dessus n'offrent pas un contraste suffisant (norme WCAG AA, ratio ≥ 4.5:1)
+avec du texte blanc superposé. `--color-blue-deep` (`#00719D`, ratio ≈ 5.45:1) et
+`--color-teal-deep` (`#277775`, ratio ≈ 5.27:1) sont donc utilisées à la place partout où du texte
+ou une icône blanche repose directement sur un fond de cette couleur (boutons CTA, liens,
+badges de rôle, etc.). `--color-blue` et `--color-teal` "purs" restent utilisés pour les éléments
+non-textuels (dégradés, icônes, bordures) où l'exigence de contraste est moins stricte (3:1).
+
+La police utilisée est [Poppins](https://fonts.google.com/specimen/Poppins) via Google Fonts.
 
 ## ✅ Accessibilité & SEO — déjà en place
 
 - Attribut `lang="fr"`, balises meta `title`/`description`/Open Graph.
 - Lien d'évitement ("Aller au contenu principal") pour la navigation clavier.
-- Contrastes de couleurs vérifiés (bleu/or/blanc sur fond blanc ou bleu foncé).
+- Contrastes de couleurs vérifiés et ajustés pour la norme WCAG AA (voir tableau des couleurs
+  ci-dessus — `--color-blue-deep`/`--color-teal-deep` pour le texte blanc sur fond de couleur).
 - `alt` sur toutes les images, `loading="lazy"` sur les images hors zone visible immédiate.
 - Menu mobile accessible au clavier (`aria-expanded`), focus visible personnalisé.
 

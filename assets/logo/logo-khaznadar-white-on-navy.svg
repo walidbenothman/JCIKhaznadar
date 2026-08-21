@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 380" role="img" aria-labelledby="logoWhiteOnNavyTitle">
+  <title id="logoWhiteOnNavyTitle">Logo JCI Khaznadar — blanc/couleur sur fond bleu marine</title>
+  <defs>
+    <linearGradient id="shieldGradNavy" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0097D6"/>
+      <stop offset="100%" stop-color="#56BDBC"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="380" rx="24" fill="#140F2D"/>
+
+  <g transform="translate(20,20)">
+    <text x="0" y="165" font-family="'Poppins', 'Montserrat', sans-serif" font-weight="800"
+          font-size="160" fill="#FFFFFF">JCI</text>
+
+    <g transform="translate(430,10)">
+      <path d="M75,0 C100,0 130,10 150,25 L150,112 C150,172 115,218 75,262 C35,218 0,172 0,112 L0,25 C20,10 50,0 75,0 Z"
+            fill="none" stroke="url(#shieldGradNavy)" stroke-width="12" stroke-linejoin="round"/>
+      <path d="M75,30 C90,30 107,35 117,44 L117,96 C117,132 97,160 75,184 C53,160 33,132 33,96 L33,44 C43,35 60,30 75,30 Z"
+            fill="none" stroke="#FFFFFF" stroke-width="9" stroke-linejoin="round"/>
+      <text x="156" y="22" font-family="'Poppins', sans-serif" font-weight="700" font-size="20" fill="#56BDBC">TM</text>
+    </g>
+
+    <text x="300" y="320" text-anchor="middle" font-family="'Poppins', 'Montserrat', sans-serif"
+          font-weight="800" font-size="64" fill="#56BDBC">Khaznadar</text>
+  </g>
+</svg>

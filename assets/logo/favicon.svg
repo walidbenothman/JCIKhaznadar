@@ -1,16 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-  <rect width="100" height="100" rx="18" fill="#0072BC"/>
-  <g transform="translate(25,10)">
-    <path d="M 25,0
-             C 33,0 43,3.5 50,9
-             L 50,40
-             C 50,58 38,72 25,84
-             C 12,72 0,58 0,40
-             L 0,9
-             C 7,3.5 17,0 25,0 Z"
-          fill="none" stroke="#ffffff" stroke-width="5"/>
-    <circle cx="25" cy="38" r="15" stroke="#ffffff" stroke-width="2" fill="none"/>
-    <ellipse cx="25" cy="38" rx="15" ry="5.5" stroke="#ffffff" stroke-width="1.4" fill="none"/>
-    <ellipse cx="25" cy="38" rx="5.5" ry="15" stroke="#ffffff" stroke-width="1.4" fill="none"/>
+  <rect width="100" height="100" rx="20" fill="#140F2D"/>
+  <g transform="translate(30,15) scale(0.267)">
+    <path fill-rule="evenodd" fill="#FFFFFF" d="
+      M75,0 C100,0 130,10 150,25 L150,112 C150,172 115,218 75,262 C35,218 0,172 0,112 L0,25 C20,10 50,0 75,0 Z
+      M75,30 C90,30 107,35 117,44 L117,96 C117,132 97,160 75,184 C53,160 33,132 33,96 L33,44 C43,35 60,30 75,30 Z
+    "/>
   </g>
 </svg>
