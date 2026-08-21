@@ -2,31 +2,36 @@
   {
     "name": "Hamza Somai",
     "role": "Président",
-    "photo": "assets/images/team-placeholder.svg"
+    "photo": "assets/images/hamzapresident.jfif"
   },
   {
     "name": "Fakher Guesmi",
     "role": "VPFD",
-    "photo": "assets/images/team-placeholder.svg"
+    "photo": "assets/images/fakherVPFD.jfif"
   },
   {
     "name": "Yasmine Boughaba",
     "role": "Secrétaire Général",
-    "photo": "assets/images/team-placeholder.svg"
-  },
+    "photo": "assets/images/yasmineSG.jfif"
+  },  
   {
     "name": "Med Karim Karoui",
     "role": "Trésorier",
-    "photo": "assets/images/team-placeholder.svg"
+    "photo": "assets/images/karimtre.jfif"
   },
   {
     "name": "Rayen Rebhi",
     "role": "VPPRE",
-    "photo": "assets/images/team-placeholder.svg"
+    "photo": "assets/images/rayenVPPRE.jfif"
   },
   {
     "name": "Abir Merzouki",
     "role": "Past Présidente Immédiate",
-    "photo": "assets/images/team-placeholder.svg"
+    "photo": "assets/images/abirpast.jfif"
+  },
+  {
+    "name": "Samar Selmi",
+    "role": "Conseillère Juridique",
+    "photo": "assets/images/samar.jfif"
   }
 ]
