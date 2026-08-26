@@ -111,27 +111,79 @@ function renderTeamCard(member) {
 }
 
 /* --- Formulaire "Rejoignez-nous" ---
-   Aucun backend pour l'instant : ouvre le client mail avec les infos pré-remplies.
-   Pour brancher un vrai service (ex: Formspree), voir le README. */
+   Tant que l'attribut action="..." du formulaire (index.html) pointe encore vers le
+   placeholder "YOUR_FORM_ID", le formulaire ouvre le client mail (mailto:) en secours.
+   Dès que vous créez un compte sur https://formspree.io et remplacez YOUR_FORM_ID par votre
+   véritable identifiant de formulaire, ce script bascule automatiquement sur un envoi AJAX à
+   Formspree, avec message de succès/erreur affiché sous le bouton — aucune autre modification
+   de code n'est nécessaire. Voir le README ("Formulaire Rejoignez-nous"). */
 function initJoinForm() {
   const form = document.getElementById('join-form');
+  const status = document.getElementById('join-form-status');
   if (!form) return;
+
+  const endpoint = form.getAttribute('action') || '';
+  const isConfigured = /^https:\/\/formspree\.io\/f\/[A-Za-z0-9]+$/.test(endpoint);
 
   form.addEventListener('submit', (event) => {
     event.preventDefault();
-    const data = new FormData(form);
-    const name = data.get('name') || '';
-    const email = data.get('email') || '';
-    const phone = data.get('phone') || '';
-    const message = data.get('message') || '';
 
-    const subject = encodeURIComponent(`Demande d'adhésion JCI Khaznadar — ${name}`);
-    const body = encodeURIComponent(
-      `Nom : ${name}\nEmail : ${email}\nTéléphone : ${phone}\n\nMessage :\n${message}`
-    );
+    if (!isConfigured) {
+      submitViaMailto(form);
+      return;
+    }
 
-    window.location.href = `mailto:contact@jcikhaznadar.tn?subject=${subject}&body=${body}`;
+    submitViaFormspree(form, endpoint, status);
   });
+}
+
+function submitViaMailto(form) {
+  const data = new FormData(form);
+  const name = data.get('name') || '';
+  const email = data.get('email') || '';
+  const phone = data.get('phone') || '';
+  const message = data.get('message') || '';
+
+  const subject = encodeURIComponent(`Demande d'adhésion JCI Khaznadar — ${name}`);
+  const body = encodeURIComponent(
+    `Nom : ${name}\nEmail : ${email}\nTéléphone : ${phone}\n\nMessage :\n${message}`
+  );
+
+  window.location.href = `mailto:contact@jcikhaznadar.tn?subject=${subject}&body=${body}`;
+}
+
+async function submitViaFormspree(form, endpoint, status) {
+  const submitBtn = form.querySelector('button[type="submit"]');
+  setFormStatus(status, '', null);
+  if (submitBtn) submitBtn.disabled = true;
+
+  try {
+    const response = await fetch(endpoint, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { Accept: 'application/json' },
+    });
+
+    if (response.ok) {
+      form.reset();
+      setFormStatus(status, 'Merci ! Votre demande a bien été envoyée, nous revenons vers vous rapidement.', 'success');
+    } else {
+      setFormStatus(status, "Une erreur est survenue lors de l'envoi. Réessayez, ou écrivez-nous directement à contact@jcikhaznadar.tn.", 'error');
+    }
+  } catch (err) {
+    console.error(err);
+    setFormStatus(status, "Impossible d'envoyer le formulaire (connexion indisponible). Écrivez-nous directement à contact@jcikhaznadar.tn.", 'error');
+  } finally {
+    if (submitBtn) submitBtn.disabled = false;
+  }
+}
+
+function setFormStatus(status, message, type) {
+  if (!status) return;
+  status.textContent = message;
+  status.hidden = !message;
+  status.classList.remove('success', 'error');
+  if (type) status.classList.add(type);
 }
 
 /* --- Année automatique dans le footer --- */

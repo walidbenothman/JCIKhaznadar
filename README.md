@@ -149,19 +149,27 @@ la section Actualités et le footer — pensez à mettre à jour l'URL partout s
 change un jour (recherchez `facebook.com/people/JCI-Khaznadar` dans le projet).
 
 ### Formulaire "Rejoignez-nous"
-Le formulaire de contact/adhésion est **statique** : il n'y a pas de backend. À la soumission,
-il ouvre le client mail de l'utilisateur avec un email pré-rempli (voir `mailto:` dans
-[js/main.js](js/main.js), fonction `initJoinForm`).
+Le formulaire est déjà **prêt à être branché sur [Formspree](https://formspree.io)** (gratuit pour
+un usage basique, 50 soumissions/mois) — il ne reste qu'une valeur à remplacer, aucun code à
+écrire :
 
-Pour recevoir les demandes directement en ligne sans coder de backend, vous pouvez brancher un
-service comme [Formspree](https://formspree.io) (gratuit pour un usage basique) :
-1. Créez un formulaire sur Formspree et récupérez son URL d'action (`https://formspree.io/f/xxxxxxx`).
-2. Dans `index.html`, remplacez `<form id="join-form" class="join-form" ...>` par :
-   ```html
-   <form id="join-form" class="join-form" action="https://formspree.io/f/xxxxxxx" method="POST" ...>
-   ```
-3. Supprimez ou adaptez le `event.preventDefault()` dans `initJoinForm()` (js/main.js) pour
-   laisser le formulaire se soumettre normalement à Formspree.
+1. Créez un compte gratuit sur [formspree.io](https://formspree.io) et un nouveau formulaire.
+2. Récupérez son identifiant (dans l'URL fournie par Formspree, du type `https://formspree.io/f/abcdwxyz`).
+3. Dans [index.html](index.html), repérez le formulaire `<form id="join-form" ...>` et remplacez
+   `YOUR_FORM_ID` dans son attribut `action="https://formspree.io/f/YOUR_FORM_ID"` par votre
+   identifiant.
+4. Enregistrez : c'est tout. Le script ([js/main.js](js/main.js), fonction `initJoinForm`)
+   détecte automatiquement qu'une vraie URL Formspree est configurée et envoie le formulaire en
+   AJAX (sans recharger la page), avec un message de succès ou d'erreur affiché sous le bouton
+   "Envoyer ma demande".
+
+**Tant que `YOUR_FORM_ID` n'est pas remplacé**, le formulaire fonctionne quand même en mode
+dégradé : il ouvre le client mail de l'utilisateur avec un email pré-rempli (`mailto:`), pour ne
+jamais laisser un visiteur sans solution.
+
+Un champ caché anti-spam (`_gotcha`, standard Formspree) est déjà en place et invisible pour les
+vrais visiteurs. Le sujet des emails reçus sur Formspree peut être personnalisé via le champ cadré
+`_subject` dans le formulaire (déjà présent).
 
 ### Carte Google Maps
 La carte intégrée dans la section Contact utilise une simple recherche "Khaznadar, Le Bardo,
@@ -231,4 +239,4 @@ Aucune variable d'environnement ni étape de build n'est requise.
 - [ ] Générer un `og-image.png` (1200×630px) pour un meilleur rendu au partage.
 - [ ] Ajouter les vrais liens Instagram/LinkedIn s'ils existent (actuellement `href="#"`).
 - [ ] Vérifier/affiner la localisation exacte sur la carte Google Maps.
-- [ ] (Optionnel) Brancher le formulaire à Formspree ou équivalent.
+- [ ] (Optionnel) Créer un compte Formspree et remplacer `YOUR_FORM_ID` dans `index.html` — voir "Formulaire Rejoignez-nous" ci-dessus.

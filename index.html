@@ -260,7 +260,8 @@ Et que servir l’humanité constitue l’œuvre la plus noble d’une vie.</p>
             </div>
           </div>
 
-          <form id="join-form" class="join-form" aria-label="Formulaire d'adhésion">
+          <form id="join-form" class="join-form" aria-label="Formulaire d'adhésion"
+                action="https://formspree.io/f/mzepnnep" method="POST">
             <div class="form-row">
               <div class="form-group">
                 <label for="name">Nom complet *</label>
@@ -279,11 +280,16 @@ Et que servir l’humanité constitue l’œuvre la plus noble d’une vie.</p>
               <label for="message">Message</label>
               <textarea id="message" name="message" placeholder="Parlez-nous de votre motivation à rejoindre JCI Khaznadar..."></textarea>
             </div>
+            <input type="hidden" name="_subject" value="Nouvelle demande d'adhésion — JCI Khaznadar">
+            <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="form-honeypot" aria-hidden="true">
             <button type="submit" class="btn btn-primary btn-block">Envoyer ma demande</button>
+            <p id="join-form-status" class="form-status" role="status" aria-live="polite" hidden></p>
             <p class="form-note">
-              Ce formulaire ouvre votre client mail (pas de backend pour l'instant).
-              Pour recevoir les demandes directement en ligne, connectez un service comme
-              <a href="https://formspree.io" target="_blank" rel="noopener">Formspree</a> — voir le README.
+              Tant que Formspree n'est pas configuré, ce formulaire ouvre votre client mail. Pour
+              recevoir les demandes directement en ligne, créez un compte gratuit sur
+              <a href="https://formspree.io" target="_blank" rel="noopener">Formspree</a> et
+              remplacez <code>YOUR_FORM_ID</code> dans l'attribut <code>action</code> de ce
+              formulaire (index.html) par votre identifiant — voir le README.
             </p>
           </form>
         </div>
