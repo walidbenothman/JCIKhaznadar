@@ -205,16 +205,36 @@ ou une icône blanche repose directement sur un fond de cette couleur (boutons C
 badges de rôle, etc.). `--color-blue` et `--color-teal` "purs" restent utilisés pour les éléments
 non-textuels (dégradés, icônes, bordures) où l'exigence de contraste est moins stricte (3:1).
 
-La police utilisée est [Poppins](https://fonts.google.com/specimen/Poppins) via Google Fonts.
+**Typographie —** le site utilise deux familles Google Fonts, appelées par les variables
+`--font-display` et `--font-body` :
 
-## ✅ Accessibilité & SEO — déjà en place
+| Variable | Police | Usage |
+|---|---|---|
+| `--font-display` | [Sora](https://fonts.google.com/specimen/Sora) (600/700/800) | Titres, chiffres, boutons, navigation |
+| `--font-body` | [Poppins](https://fonts.google.com/specimen/Poppins) (400/500/600/700) | Paragraphes et texte courant |
 
-- Attribut `lang="fr"`, balises meta `title`/`description`/Open Graph.
+**Mouvement —** les durées et courbes d'accélération sont centralisées (`--e-out`,
+`--e-spring`, `--t-base`…). Toutes les animations sont automatiquement neutralisées si le
+visiteur a activé « réduire les animations » dans son système d'exploitation.
+
+## ✅ Accessibilité, résilience & SEO — déjà en place
+
+- Attribut `lang="fr"`, balises meta `title`/`description`/Open Graph, `theme-color`.
 - Lien d'évitement ("Aller au contenu principal") pour la navigation clavier.
 - Contrastes de couleurs vérifiés et ajustés pour la norme WCAG AA (voir tableau des couleurs
-  ci-dessus — `--color-blue-deep`/`--color-teal-deep` pour le texte blanc sur fond de couleur).
-- `alt` sur toutes les images, `loading="lazy"` sur les images hors zone visible immédiate.
-- Menu mobile accessible au clavier (`aria-expanded`), focus visible personnalisé.
+  ci-dessus — `--blue-600`/`--teal-600` pour le texte blanc sur fond de couleur).
+- `alt` sur toutes les images, `loading="lazy"` hors zone visible immédiate, `scroll-padding-top`
+  pour que les ancres ne passent pas sous l'en-tête fixe.
+- Menu plein écran accessible : `aria-expanded`, fermeture par <kbd>Échap</kbd>, **piège à focus**
+  (le clavier ne peut pas sortir du menu ouvert), verrou de défilement.
+- Onglets du Credo conformes au motif ARIA « tabs » : navigation aux flèches ←/→, `Home`/`End`,
+  `tabindex` glissant.
+- Respect de `prefers-reduced-motion` : toutes les animations sont neutralisées.
+- **Dégradation gracieuse** : si le JavaScript est désactivé ou échoue, la règle CSS
+  `html:not(.js)` (et `html.js-failed`) affiche immédiatement l'intégralité du contenu — aucune
+  section ne peut rester invisible. Le préchargeur possède également un repli CSS à 4 s.
+- Curseur personnalisé, inclinaison 3D et effet magnétique **uniquement** sur souris
+  (`hover: hover and pointer: fine`) — jamais sur mobile ni tablette.
 
 ## 🌐 Déployer le site
 
@@ -239,4 +259,5 @@ Aucune variable d'environnement ni étape de build n'est requise.
 - [ ] Générer un `og-image.png` (1200×630px) pour un meilleur rendu au partage.
 - [ ] Ajouter les vrais liens Instagram/LinkedIn s'ils existent (actuellement `href="#"`).
 - [ ] Vérifier/affiner la localisation exacte sur la carte Google Maps.
-- [ ] (Optionnel) Créer un compte Formspree et remplacer `YOUR_FORM_ID` dans `index.html` — voir "Formulaire Rejoignez-nous" ci-dessus.
+- [x] Formspree branché (identifiant `mzepnnep` dans l'attribut `action` du formulaire).
+- [ ] Ajouter les vrais liens Instagram / LinkedIn dans la section Contact (actuellement `href="#"`).
