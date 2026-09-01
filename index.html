@@ -12,6 +12,7 @@
   <meta property="og:description" content="Filière locale de JCI Tunisie au Bardo depuis 1988. Développer les jeunes leaders par l'action citoyenne, l'humanitaire, la culture et le sport.">
   <meta property="og:image" content="assets/logo/logo-khaznadar-color.svg">
   <meta property="og:locale" content="fr_FR">
+  <meta name="theme-color" content="#140F2D">
 
   <link rel="icon" href="assets/logo/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,8 +23,13 @@
 <body>
   <a class="skip-link" href="#main-content">Aller au contenu principal</a>
 
+  <!-- Barre de progression de lecture -->
+  <div class="scroll-progress" aria-hidden="true">
+    <div class="scroll-progress-bar" id="scroll-progress-bar"></div>
+  </div>
+
   <!-- ======================= HEADER / NAVIGATION ======================= -->
-  <header class="site-header">
+  <header class="site-header" id="site-header">
     <nav class="navbar" aria-label="Navigation principale">
       <a href="#accueil" class="brand">
         <img src="assets/logo/logo-khaznadar-color.svg" alt="Logo JCI Khaznadar">
@@ -34,13 +40,13 @@
         <span></span><span></span><span></span>
       </button>
 
-      <ul class="nav-links">
-        <li><a href="#accueil">Accueil</a></li>
-        <li><a href="#qui-sommes-nous">Qui sommes-nous</a></li>
-        <li><a href="#actions">Nos actions</a></li>
-        <li><a href="#rejoignez-nous">Rejoignez-nous</a></li>
-        <li><a href="#actualites">Actualités</a></li>
-        <li><a href="#contact">Contact</a></li>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#accueil" data-nav-link>Accueil</a></li>
+        <li><a href="#qui-sommes-nous" data-nav-link>Qui sommes-nous</a></li>
+        <li><a href="#actions" data-nav-link>Nos actions</a></li>
+        <li><a href="#rejoignez-nous" data-nav-link>Rejoignez-nous</a></li>
+        <li><a href="#actualites" data-nav-link>Actualités</a></li>
+        <li><a href="#contact" data-nav-link>Contact</a></li>
         <li><a href="#rejoignez-nous" class="btn btn-primary">Rejoindre JCI Khaznadar</a></li>
       </ul>
     </nav>
@@ -52,25 +58,62 @@
     <section id="accueil" class="hero">
       <img class="hero-bg" src="assets/images/AG2025.jpg" alt="" loading="eager">
       <div class="hero-overlay"></div>
+      <div class="hero-blobs" aria-hidden="true">
+        <span class="blob blob-1"></span>
+        <span class="blob blob-2"></span>
+        <span class="blob blob-3"></span>
+      </div>
+
       <div class="container hero-content">
-        <span class="hero-eyebrow">Filière de JCI Tunisie · Le Bardo, Tunis</span>
-        <h1>Nous pouvons le faire. <span>Ensemble, à Khaznadar.</span></h1>
-        <p>JCI Khaznadar rassemble depuis 1988 de jeunes actifs de 18 à 40 ans qui développent leur leadership en agissant concrètement pour leur communauté : humanitaire, citoyenneté, culture et sport.</p>
+        <span class="hero-eyebrow"><span class="dot" aria-hidden="true"></span> Filière de JCI Tunisie · Le Bardo, Tunis</span>
+
+        <h1 class="hero-title">
+          <span class="line">Nous pouvons le faire.</span>
+          <span class="line accent">Ensemble, à Khaznadar.</span>
+        </h1>
+
+        <p class="hero-lede">JCI Khaznadar rassemble depuis 1988 de jeunes actifs de 18 à 40 ans qui développent leur leadership en agissant concrètement pour leur communauté : humanitaire, citoyenneté, culture et sport.</p>
+
         <div class="hero-actions">
           <a href="#rejoignez-nous" class="btn btn-primary">Rejoignez-nous</a>
           <a href="#actions" class="btn btn-outline">Découvrir nos actions</a>
         </div>
+
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <span class="hero-stat-number" data-count-to="1988" data-count-duration="1800">0</span>
+            <span class="hero-stat-label">Année de fondation</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat-number" data-count-to="100" data-count-suffix="+">0</span>
+            <span class="hero-stat-label">Pays JCI International</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat-number" data-count-to="4">0</span>
+            <span class="hero-stat-label">Domaines d'action</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat-number" data-count-static="18-40">0</span>
+            <span class="hero-stat-label">Âge des membres</span>
+          </div>
+        </div>
       </div>
+
+      <a href="#qui-sommes-nous" class="scroll-cue" aria-label="Défiler vers la section suivante">
+        <span class="scroll-cue-mouse" aria-hidden="true"></span>
+        Découvrir
+      </a>
     </section>
 
     <!-- ======================= QUI SOMMES-NOUS ======================= -->
     <section id="qui-sommes-nous">
       <div class="container about-grid">
-        <div class="about-media">
+        <div class="about-media reveal">
           <img src="assets/images/AG2025.jpg" alt="Membres de JCI Khaznadar lors d'une action de terrain" loading="lazy" width="800" height="600">
           <div class="about-badge"><strong>1988</strong><span>Année de fondation</span></div>
+          <div class="about-chip">Filière officielle<br><strong>JCI Tunisie</strong></div>
         </div>
-        <div class="about-text">
+        <div class="about-text reveal" style="--reveal-delay:0.12s">
           <span class="section-tag">Qui sommes-nous</span>
           <h2>Une chambre locale, une mission mondiale</h2>
           <p>JCI Khaznadar est une Organisation Locale Membre (OLM) de <strong>JCI Tunisie</strong>, elle-même rattachée à <strong>JCI International</strong>, fédération mondiale présente dans plus de 100 pays qui rassemble de jeunes actifs déterminés à créer un impact positif.</p>
@@ -88,35 +131,46 @@
     <!-- ======================= CREDO / VALEURS ======================= -->
     <section class="section-alt">
       <div class="container">
-        <div class="section-header">
+        <div class="section-header reveal">
           <span class="section-tag">Notre mission &amp; nos valeurs</span>
           <h2>Le Credo JCI</h2>
-          <p>Nous Croyons : </br>
-
-Que la foi en Dieu donne à la vie son véritable sens ; </br>
-
-Que la fraternité humaine transcende la souveraineté des nations, </br>
-
-Que la liberté des individus et de l’entreprise assurera mieux la justice économique, </br>
-
-Que le gouvernement doit s’appuyer sur la loi et non sur l’arbitraire, </br>
-
-Que la personne humaine est la plus précieuse des richesses, </br>
-
-Et que servir l’humanité constitue l’œuvre la plus noble d’une vie.</p>
-          <h2>ميثــاق الغرفــة الفتيــة</h2>
-          <p>
-           </br>: نحــن نعتقــد
-</br> .أن الإيمان بالله يعطي للحياة معناها الحقيقي•
-</br> .أن التآخي البشري يفوق سيادة الدول•
-</br> .أن الاجتهاد وحرية الأفراد يضمنان العدالة الاجتماعية والاقتصادية•
-</br> .أن قيادة الشعوب تعتمد القانون وترفض التعسف والحيف•
-</br> .أن الذات البشرية هي أهم المكاسب وأغناها•
-</br> .أن خدمة الإنسان هي أنبل عمل في الحياة•
-          </p>
           <p>Cinq convictions fondatrices guident chacune de nos actions, en fidélité à l'esprit du mouvement JCI international.</p>
         </div>
-        <div class="values-grid">
+
+        <div class="credo-manifesto reveal" style="--reveal-delay:0.1s">
+          <div class="credo-tabs" role="tablist" aria-label="Langue du Credo">
+            <button type="button" class="credo-tab is-active" role="tab" aria-selected="true" aria-controls="credo-panel-fr" id="credo-tab-fr" data-lang="fr">Français</button>
+            <button type="button" class="credo-tab" role="tab" aria-selected="false" aria-controls="credo-panel-ar" id="credo-tab-ar" data-lang="ar">العربية</button>
+          </div>
+
+          <div class="credo-panels">
+            <div class="credo-panel is-active" role="tabpanel" id="credo-panel-fr" aria-labelledby="credo-tab-fr">
+              <p class="credo-lead">Nous Croyons :</p>
+              <ul class="credo-list">
+                <li>Que la foi en Dieu donne à la vie son véritable sens ;</li>
+                <li>Que la fraternité humaine transcende la souveraineté des nations,</li>
+                <li>Que la liberté des individus et de l'entreprise assurera mieux la justice économique,</li>
+                <li>Que le gouvernement doit s'appuyer sur la loi et non sur l'arbitraire,</li>
+                <li>Que la personne humaine est la plus précieuse des richesses,</li>
+                <li>Et que servir l'humanité constitue l'œuvre la plus noble d'une vie.</li>
+              </ul>
+            </div>
+            <div class="credo-panel" role="tabpanel" id="credo-panel-ar" aria-labelledby="credo-tab-ar" dir="rtl" lang="ar" hidden>
+              <p class="credo-panel-title">ميثــاق الغرفــة الفتيــة</p>
+              <p class="credo-lead">: نحــن نعتقــد</p>
+              <ul class="credo-list">
+                <li>أن الإيمان بالله يعطي للحياة معناها الحقيقي.</li>
+                <li>أن التآخي البشري يفوق سيادة الدول.</li>
+                <li>أن الاجتهاد وحرية الأفراد يضمنان العدالة الاجتماعية والاقتصادية.</li>
+                <li>أن قيادة الشعوب تعتمد القانون وترفض التعسف والحيف.</li>
+                <li>أن الذات البشرية هي أهم المكاسب وأغناها.</li>
+                <li>أن خدمة الإنسان هي أنبل عمل في الحياة.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="values-grid reveal-stagger">
           <div class="value-card">
             <div class="value-icon">🤝</div>
             <h3>Fraternité humaine</h3>
@@ -149,12 +203,12 @@ Et que servir l’humanité constitue l’œuvre la plus noble d’une vie.</p>
     <!-- ======================= DOMAINES D'ACTION ======================= -->
     <section id="actions">
       <div class="container">
-        <div class="section-header">
+        <div class="section-header reveal">
           <span class="section-tag">Nos actions</span>
           <h2>Nos domaines d'action</h2>
           <p>Quatre grands axes structurent les projets que nous menons tout au long de l'année.</p>
         </div>
-        <div class="actions-grid">
+        <div class="actions-grid reveal-stagger">
           <article class="action-card bg-1">
             <div class="action-icon">🤲</div>
             <div class="action-body">
@@ -190,27 +244,27 @@ Et que servir l’humanité constitue l’œuvre la plus noble d’une vie.</p>
     <!-- ======================= ÉQUIPE / BUREAU ======================= -->
     <section id="equipe" class="section-alt">
       <div class="container">
-        <div class="section-header">
+        <div class="section-header reveal">
           <span class="section-tag">Notre équipe</span>
           <h2>Le Bureau local</h2>
           <p>Une équipe de bénévoles engagés qui pilote les projets et la vie de la chambre. (Grille à mettre à jour avec les membres actuels — voir content/team.json)</p>
         </div>
-        <div id="team-grid" class="team-grid" aria-live="polite"></div>
+        <div id="team-grid" class="team-grid reveal-stagger" aria-live="polite"></div>
       </div>
     </section>
 
     <!-- ======================= ACTUALITÉS ======================= -->
     <section id="actualites">
       <div class="container">
-        <div class="section-header">
+        <div class="section-header reveal">
           <span class="section-tag">Actualités</span>
           <h2>Nos dernières actions</h2>
           <p>Un aperçu de nos activités récentes. Retrouvez toute notre actualité, en photos, sur notre page Facebook.</p>
         </div>
 
-        <div id="news-grid" class="news-grid" aria-live="polite"></div>
+        <div id="news-grid" class="news-grid reveal-stagger" aria-live="polite"></div>
 
-        <div class="facebook-banner">
+        <div class="facebook-banner reveal">
           <p>📷 Toutes nos photos et actualités en direct sont publiées sur Facebook.</p>
           <a class="btn btn-primary" href="https://www.facebook.com/people/JCI-Khaznadar/61567749201924/" target="_blank" rel="noopener">
             Suivez-nous sur Facebook
@@ -222,14 +276,14 @@ Et que servir l’humanité constitue l’œuvre la plus noble d’une vie.</p>
     <!-- ======================= REJOIGNEZ-NOUS ======================= -->
     <section id="rejoignez-nous" class="join-section">
       <div class="container">
-        <div class="section-header">
+        <div class="section-header reveal">
           <span class="section-tag">Rejoignez-nous</span>
           <h2>Devenez membre de JCI Khaznadar</h2>
           <p>Rejoindre JCI, c'est développer son leadership, agir concrètement pour sa communauté et intégrer un réseau international de jeunes actifs.</p>
         </div>
 
         <div class="join-grid">
-          <div class="join-benefits">
+          <div class="join-benefits reveal-stagger">
             <div class="benefit-item">
               <div class="benefit-icon">🚀</div>
               <div>
@@ -260,7 +314,7 @@ Et que servir l’humanité constitue l’œuvre la plus noble d’une vie.</p>
             </div>
           </div>
 
-          <form id="join-form" class="join-form" aria-label="Formulaire d'adhésion"
+          <form id="join-form" class="join-form reveal" style="--reveal-delay:0.12s" aria-label="Formulaire d'adhésion"
                 action="https://formspree.io/f/mzepnnep" method="POST">
             <div class="form-row">
               <div class="form-group">
@@ -282,7 +336,11 @@ Et que servir l’humanité constitue l’œuvre la plus noble d’une vie.</p>
             </div>
             <input type="hidden" name="_subject" value="Nouvelle demande d'adhésion — JCI Khaznadar">
             <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="form-honeypot" aria-hidden="true">
-            <button type="submit" class="btn btn-primary btn-block">Envoyer ma demande</button>
+            <button type="submit" class="btn btn-primary btn-block">
+              <span class="btn-spinner" aria-hidden="true"></span>
+              <span class="btn-label-idle">Envoyer ma demande</span>
+              <span class="btn-label-loading">Envoi en cours…</span>
+            </button>
             <p id="join-form-status" class="form-status" role="status" aria-live="polite" hidden></p>
             <p class="form-note">
               Tant que Formspree n'est pas configuré, ce formulaire ouvre votre client mail. Pour
@@ -299,14 +357,14 @@ Et que servir l’humanité constitue l’œuvre la plus noble d’une vie.</p>
     <!-- ======================= CONTACT ======================= -->
     <section id="contact" class="section-alt">
       <div class="container">
-        <div class="section-header">
+        <div class="section-header reveal">
           <span class="section-tag">Contact</span>
           <h2>Une question ? Contactez-nous</h2>
           <p>Nous serons ravis de vous répondre et de vous accueillir lors de notre prochaine réunion.</p>
         </div>
 
         <div class="contact-grid">
-          <div class="contact-info">
+          <div class="contact-info reveal-stagger">
             <div class="contact-item">
               <div class="contact-icon">📍</div>
               <div>
@@ -347,7 +405,7 @@ Et que servir l’humanité constitue l’œuvre la plus noble d’une vie.</p>
             </div>
           </div>
 
-          <div class="map-wrapper">
+          <div class="map-wrapper reveal" style="--reveal-delay:0.12s">
             <iframe
               src="https://maps.google.com/maps?q=Khaznadar%2C%20Le%20Bardo%2C%20Tunis&t=&z=14&ie=UTF8&iwloc=&output=embed"
               title="Localisation de JCI Khaznadar sur Google Maps"
@@ -408,6 +466,8 @@ Et que servir l’humanité constitue l’œuvre la plus noble d’une vie.</p>
       </div>
     </div>
   </footer>
+
+  <button id="back-to-top" class="back-to-top" aria-label="Retour en haut de page" type="button">↑</button>
 
   <script src="js/main.js"></script>
 </body>
