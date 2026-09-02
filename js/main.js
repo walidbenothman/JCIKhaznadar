@@ -12,7 +12,7 @@
    06. Découpage du texte en mots (animation de révélation)
    07. Révélation au défilement
    08. Compteurs animés
-   09. Inclinaison 3D & boutons magnétiques
+   09. Boutons magnétiques
    10. Onglets du Credo (motif ARIA complet)
    11. Contenus dynamiques : actualités & équipe
    12. Formulaire d'adhésion (Formspree + repli mailto:)
@@ -162,7 +162,7 @@
     window.requestAnimationFrame(loop);
 
     // L'anneau grossit au survol des éléments interactifs.
-    const interactive = 'a, button, input, textarea, [role="tab"], [data-tilt]';
+    const interactive = 'a, button, input, textarea, [role="tab"]';
     document.addEventListener('mouseover', (e) => {
       if (e.target.closest(interactive)) document.body.classList.add('cursor-hover');
     });
@@ -364,7 +364,10 @@
   }
 
   function observeReveals(root) {
-    const selector = '[data-reveal], [data-reveal-group], [data-clip]';
+    // `[data-clip]` est volontairement absent : un élément masqué par
+    // clip-path a une aire nulle et ne déclencherait jamais l'observateur.
+    // Son masque est levé par le parent `[data-reveal]` via le CSS.
+    const selector = '[data-reveal], [data-reveal-group]';
     const targets = $$(selector, root);
     if (root instanceof Element && root.matches(selector)) targets.push(root);
 
@@ -417,39 +420,8 @@
   }
 
   /* ======================================================================
-     09. INCLINAISON 3D & BOUTONS MAGNÉTIQUES (souris uniquement)
+     09. BOUTONS MAGNÉTIQUES (souris uniquement)
      ====================================================================== */
-
-  function initTilt(root = document) {
-    if (!finePointer || !canAnimate) return;
-
-    $$('[data-tilt]', root).forEach((el) => {
-      if (el.dataset.tiltReady === 'true') return;
-      el.dataset.tiltReady = 'true';
-
-      const MAX = 7; // degrés
-      let rect = null;
-
-      // Le rectangle est mesuré une seule fois à l'entrée du curseur :
-      // aucun recalcul de mise en page pendant le déplacement.
-      el.addEventListener('pointerenter', (e) => {
-        if (e.pointerType !== 'mouse') return;
-        rect = el.getBoundingClientRect();
-      });
-
-      el.addEventListener('pointermove', (e) => {
-        if (e.pointerType !== 'mouse' || !rect) return;
-        const px = (e.clientX - rect.left) / rect.width - 0.5;
-        const py = (e.clientY - rect.top) / rect.height - 0.5;
-        el.style.transform =
-          `perspective(1000px) rotateX(${(-py * MAX).toFixed(2)}deg) rotateY(${(px * MAX).toFixed(2)}deg) translateZ(0)`;
-      });
-
-      const reset = () => { rect = null; el.style.transform = ''; };
-      el.addEventListener('pointerleave', reset);
-      window.addEventListener('scroll', () => { if (rect) rect = el.getBoundingClientRect(); }, { passive: true });
-    });
-  }
 
   function initMagnetic() {
     if (!finePointer || !canAnimate) return;
@@ -746,7 +718,6 @@
     safe(initSplitText, 'split');   // avant « reveal » : les mots doivent exister
     safe(initReveal, 'reveal');
     safe(initCounters, 'counters');
-    safe(initTilt, 'tilt');
     safe(initMagnetic, 'magnetic');
     safe(initTabs, 'tabs');
     safe(initNews, 'news');

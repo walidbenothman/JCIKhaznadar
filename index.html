@@ -182,7 +182,9 @@
         <div class="about__media" data-reveal>
           <div class="about__outline" aria-hidden="true"></div>
           <div class="about__frame" data-clip>
-            <img src="assets/images/AG2025.jpg" alt="Membres de JCI Khaznadar lors d'une action de terrain" loading="lazy" width="800" height="600">
+            <img src="assets/images/AG2025.jpg"
+                 alt="Les membres de JCI Khaznadar réunis lors de l'Assemblée générale d'élection 2025, au Bardo"
+                 loading="lazy" decoding="async" width="800" height="600">
           </div>
           <div class="about__badge">
             <strong>1988</strong>
@@ -297,37 +299,59 @@
           <p class="s-lede" data-reveal style="--d:.14s">Quatre grands axes structurent les projets que nous menons tout au long de l'année.</p>
         </div>
 
-        <div class="bento" data-reveal-group>
-          <article class="tile tile--a" data-tilt>
-            <span class="tile__icon" aria-hidden="true">🤲</span>
-            <span class="tile__index" aria-hidden="true">01</span>
-            <span class="tile__rule" aria-hidden="true"></span>
-            <h3 class="tile__title">Humanitaire</h3>
-            <p class="tile__text">Actions solidaires, collectes et campagnes de sensibilisation au service de la communauté du Bardo.</p>
+        <div class="actions-grid" data-reveal-group>
+          <article class="action-card">
+            <div class="action-card__head">
+              <span class="action-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" focusable="false">
+                  <path d="M20.8 5.6a5.5 5.5 0 0 0-7.8 0L12 6.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 22l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8Z"/>
+                </svg>
+              </span>
+              <span class="action-card__num" aria-hidden="true">01</span>
+            </div>
+            <h3 class="action-card__title">Humanitaire</h3>
+            <p class="action-card__text">Actions solidaires, collectes et campagnes de sensibilisation au service de la communauté du Bardo.</p>
           </article>
 
-          <article class="tile tile--b" data-tilt>
-            <span class="tile__icon" aria-hidden="true">🏛️</span>
-            <span class="tile__index" aria-hidden="true">02</span>
-            <span class="tile__rule" aria-hidden="true"></span>
-            <h3 class="tile__title">Citoyenneté &amp; gouvernance</h3>
-            <p class="tile__text">Formations en leadership, ateliers de citoyenneté active et projets de sensibilisation civique.</p>
+          <article class="action-card">
+            <div class="action-card__head">
+              <span class="action-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" focusable="false">
+                  <path d="M2.5 9.5 12 3l9.5 6.5M4.5 9.5V20M19.5 9.5V20M9 9.5V20M15 9.5V20M3 20h18"/>
+                </svg>
+              </span>
+              <span class="action-card__num" aria-hidden="true">02</span>
+            </div>
+            <h3 class="action-card__title">Citoyenneté &amp; gouvernance</h3>
+            <p class="action-card__text">Formations en leadership, ateliers de citoyenneté active et projets de sensibilisation civique.</p>
           </article>
 
-          <article class="tile tile--c" data-tilt>
-            <span class="tile__icon" aria-hidden="true">🌐</span>
-            <span class="tile__index" aria-hidden="true">03</span>
-            <span class="tile__rule" aria-hidden="true"></span>
-            <h3 class="tile__title">Échanges culturels</h3>
-            <p class="tile__text">Rencontres avec d'autres chambres JCI en Tunisie et à l'international pour un dialogue interculturel.</p>
+          <article class="action-card">
+            <div class="action-card__head">
+              <span class="action-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" focusable="false">
+                  <circle cx="12" cy="12" r="9"/>
+                  <path d="M3 12h18M12 3c2.5 2.5 3.9 5.7 4 9-.1 3.3-1.5 6.5-4 9-2.5-2.5-3.9-5.7-4-9 .1-3.3 1.5-6.5 4-9Z"/>
+                </svg>
+              </span>
+              <span class="action-card__num" aria-hidden="true">03</span>
+            </div>
+            <h3 class="action-card__title">Échanges culturels</h3>
+            <p class="action-card__text">Rencontres avec d'autres chambres JCI en Tunisie et à l'international pour un dialogue interculturel.</p>
           </article>
 
-          <article class="tile tile--d" data-tilt>
-            <span class="tile__icon" aria-hidden="true">🏆</span>
-            <span class="tile__index" aria-hidden="true">04</span>
-            <span class="tile__rule" aria-hidden="true"></span>
-            <h3 class="tile__title">Loisirs &amp; sports</h3>
-            <p class="tile__text">Tournois, sorties et activités conviviales qui renforcent la cohésion entre nos membres.</p>
+          <article class="action-card">
+            <div class="action-card__head">
+              <span class="action-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" focusable="false">
+                  <path d="M7 4h10v5a5 5 0 0 1-10 0V4Z"/>
+                  <path d="M7 6H4.6a2.4 2.4 0 0 0 0 4.8H7M17 6h2.4a2.4 2.4 0 0 1 0 4.8H17M12 14v4M8.5 21h7"/>
+                </svg>
+              </span>
+              <span class="action-card__num" aria-hidden="true">04</span>
+            </div>
+            <h3 class="action-card__title">Loisirs &amp; sports</h3>
+            <p class="action-card__text">Tournois, sorties et activités conviviales qui renforcent la cohésion entre nos membres.</p>
           </article>
         </div>
       </div>
