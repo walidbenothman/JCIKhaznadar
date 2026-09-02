@@ -1538,7 +1538,11 @@ body.menu-open .burger__line { background: var(--white); }
   /* L'e-mail et le numéro peuvent se couper plutôt que de forcer la largeur */
   overflow-wrap: anywhere;
 }
-.info__item a {
+/* `:not(.social)` — cette règle ne vise que les liens TEXTE (e-mail,
+   téléphone). Sans l'exclusion, sa spécificité (0,1,1) l'emportait sur
+   `.social` (0,1,0) et imposait aux icônes la couleur grise du texte
+   ainsi qu'un `display: inline-block` qui annulait leur centrage. */
+.info__item a:not(.social) {
   display: inline-block;
   color: var(--muted);
   overflow-wrap: anywhere;
@@ -1546,19 +1550,31 @@ body.menu-open .burger__line { background: var(--white); }
   padding-block: 11px;
   transition: color var(--t-fast);
 }
-.info__item a:hover { color: var(--blue-600); }
+.info__item a:not(.social):hover { color: var(--blue-600); }
 
 .socials { display: flex; gap: 11px; margin-top: 9px; }
 .social {
   width: 46px; height: 46px;
-  display: grid;
+  /* `inline-grid` + `place-items: center` : le glyphe est centré quelles que
+     soient les règles de lien environnantes. `flex-shrink: 0` empêche
+     l'écrasement du cercle dans un conteneur flex étroit. */
+  display: inline-grid;
   place-items: center;
+  flex-shrink: 0;
+  padding: 0;
   border-radius: 50%;
-  background: var(--blue-600);
+  background: var(--grad-brand);
   color: var(--white);
-  transition: transform var(--t-base), background var(--t-base), box-shadow var(--t-base);
+  box-shadow: 0 4px 12px -4px rgba(0, 151, 214, 0.5);
+  transition: transform var(--t-base), background var(--t-base), box-shadow var(--t-base), color var(--t-base);
 }
-.social:hover { transform: translateY(-5px); background: var(--teal-600); box-shadow: var(--sh-md); }
+.social svg { display: block; }
+.social:hover {
+  transform: translateY(-5px);
+  background: var(--navy-900);
+  color: var(--white);
+  box-shadow: var(--sh-md);
+}
 
 .map {
   border-radius: var(--r-lg);
@@ -1604,7 +1620,11 @@ body.menu-open .burger__line { background: var(--white); }
   margin-bottom: 16px;
 }
 .footer__col ul { display: grid; gap: 2px; }
-.footer__col a {
+/* `:not(.social)` — ne vise que les liens texte du pied de page. Sans
+   l'exclusion, cette règle (0,1,1) écrasait `.social` (0,1,0) : l'icône
+   héritait du gris atténué et d'un `display: flex` sans `justify-content`,
+   ce qui la plaquait à gauche de son cercle au lieu de la centrer. */
+.footer__col a:not(.social) {
   /* Lien de pied de page : hauteur tactile suffisante et espacement entre
      deux liens pour éviter les appuis accidentels. */
   display: flex;
@@ -1614,14 +1634,21 @@ body.menu-open .burger__line { background: var(--white); }
   color: rgba(255, 255, 255, 0.66);
   transition: color var(--t-fast), padding-left var(--t-fast);
 }
-.footer__col a:hover { color: var(--teal-300); padding-left: 5px; }
-.footer__social { display: flex; gap: 10px; }
+.footer__col a:not(.social):hover { color: var(--teal-300); padding-left: 5px; }
+.footer__social { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
 .footer__social .social {
   width: var(--tap); height: var(--tap);
-  background: rgba(255, 255, 255, 0.07);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  /* Le fond translucide à 7 % était quasi indiscernable du bleu marine :
+     on reprend le dégradé de marque, nettement lisible sur fond sombre. */
+  background: var(--grad-brand);
+  border: 0;
+  color: var(--white);
 }
-.footer__social .social:hover { background: var(--teal-600); border-color: transparent; }
+.footer__social .social:hover {
+  background: var(--white);
+  color: var(--navy-900);
+  border-color: transparent;
+}
 .footer__bottom {
   display: flex;
   flex-wrap: wrap;
