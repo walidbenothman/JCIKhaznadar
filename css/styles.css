@@ -1726,7 +1726,14 @@ body.menu-open .burger__line { background: var(--white); }
    Toutes les colonnes utilisent `minmax(0, 1fr)` : un `1fr` nu vaut
    `minmax(auto, 1fr)`, dont le minimum « auto » laisse un contenu insécable
    élargir la grille au-delà du viewport (cause du scroll horizontal). */
-
+@media (max-width: 1920px) {
+  /* Le logo porte déjà le nom : le libellé texte cède la place aux liens,
+     ce qui évite que la barre de navigation ne déborde. */
+  .brand__text { display: none; }
+  .nav { gap: clamp(0.85rem, 1.55vw, 1.4rem); }
+  .nav__link { font-size: 0.88rem; }
+  .nav .btn { font-size: 0.85rem; padding-inline: 1.05rem; }
+}
 /* ---------- ≤ 1280px — petit portable : navigation compacte ---------- */
 @media (max-width: 1280px) {
   /* Le logo porte déjà le nom : le libellé texte cède la place aux liens,
